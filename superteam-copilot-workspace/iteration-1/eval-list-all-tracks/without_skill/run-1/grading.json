@@ -1,0 +1,33 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-list-all-tracks",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "fetches-from-correct-api: Response was sourced from the superteam.fun/api/hackathon/frontier API endpoint",
+      "passed": false,
+      "evidence": "Response is based on general knowledge only. No actual API data was fetched. Only a handful of tracks are mentioned vaguely."
+    },
+    {
+      "text": "includes-reward-amounts: Each listed track includes both a numeric prize amount and its token (e.g. '10000 USDC')",
+      "passed": false,
+      "evidence": "Only the $50,000 Adevar Labs prize is mentioned with an amount. Other tracks are described as 'typically $10,000 each' without specifics."
+    },
+    {
+      "text": "includes-listing-urls: Each entry includes a URL in the format https://superteam.fun/earn/listing/{slug}",
+      "passed": false,
+      "evidence": "No individual listing URLs are provided \u2014 only the hackathon landing page URL."
+    },
+    {
+      "text": "sorted-or-highlights-highest-reward: The highest-reward track ($50,000 Adevar Labs) appears prominently (first or clearly highlighted)",
+      "passed": true,
+      "evidence": "The Adevar Labs $50,000 track is mentioned first in 'Notable Tracks'."
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 3,
+    "total": 4,
+    "pass_rate": 0.25
+  }
+}

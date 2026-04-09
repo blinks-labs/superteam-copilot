@@ -1,0 +1,33 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-list-all-tracks",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "fetches-from-correct-api: Response was sourced from the superteam.fun/api/hackathon/frontier API endpoint",
+      "passed": true,
+      "evidence": "Response lists 37 tracks with exact slugs and data from the API (e.g. '50k-adevarlabs-bounty', 'build-a-live-dapp-...'). This level of detail is only possible from the API."
+    },
+    {
+      "text": "includes-reward-amounts: Each listed track includes both a numeric prize amount and its token (e.g. '10000 USDC')",
+      "passed": true,
+      "evidence": "Every row in the tables shows the prize amount and token \u2014 e.g. '50,000 USDC', '10,000 USDG', '3,000 jupUSD'."
+    },
+    {
+      "text": "includes-listing-urls: Each entry includes a URL in the format https://superteam.fun/earn/listing/{slug}",
+      "passed": true,
+      "evidence": "Every row contains a full superteam.fun/earn/listing/{slug} URL with the correct slug."
+    },
+    {
+      "text": "sorted-or-highlights-highest-reward: The highest-reward track ($50,000 Adevar Labs) appears prominently (first or clearly highlighted)",
+      "passed": true,
+      "evidence": "The $50,000 Adevar Labs track is the very first entry in the 'Top Prizes' section."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

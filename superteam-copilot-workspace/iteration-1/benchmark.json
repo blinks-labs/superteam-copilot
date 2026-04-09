@@ -1,0 +1,350 @@
+{
+  "metadata": {
+    "skill_name": "superteam-copilot",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-04-09T17:05:36Z",
+    "evals_run": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 17.8,
+        "tokens": 11538,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "mentions-50k-prize: Response mentions $50,000 or 50,000 USDC as the total prize pool",
+          "passed": true,
+          "evidence": "Response says 'Total: $50,000 USDC in security audit credits'."
+        },
+        {
+          "text": "mentions-5-winners: Response mentions 5 winners or $10,000 per winner structure",
+          "passed": true,
+          "evidence": "Response says 'Winners: 5 teams x $10,000 each' and shows the breakdown table."
+        },
+        {
+          "text": "mentions-may-12-deadline: Response mentions May 12, 2026 as the submission deadline",
+          "passed": true,
+          "evidence": "Response says 'Application deadline: May 12, 2026'."
+        },
+        {
+          "text": "lists-submission-requirements: Response includes specific submission requirements: GitHub repo, Colosseum profile link, and/or technical documentation",
+          "passed": true,
+          "evidence": "Response lists all 10 submission requirements including 'GitHub repository link', 'Colosseum profile link', 'Loom/demo video', 'technical docs', etc."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "mentions-southeast-asia-chapters: Response explicitly mentions Indonesia, Singapore, and/or Malaysia as having chapters",
+          "passed": true,
+          "evidence": "Response has a dedicated 'Southeast Asia (your region!)' section listing Indonesia, Singapore, Malaysia, Japan, and Korea."
+        },
+        {
+          "text": "lists-comprehensive-chapter-count: Response lists 15 or more distinct Superteam communities",
+          "passed": true,
+          "evidence": "Response lists all 23 communities in two organized tables."
+        },
+        {
+          "text": "includes-social-links: Response includes X (Twitter) or other social links for the listed chapters",
+          "passed": true,
+          "evidence": "Every row in the tables includes a full https://x.com/... link."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "fetches-from-correct-api: Response was sourced from the superteam.fun/api/hackathon/frontier API endpoint",
+          "passed": true,
+          "evidence": "Response lists 37 tracks with exact slugs and data from the API (e.g. '50k-adevarlabs-bounty', 'build-a-live-dapp-...'). This level of detail is only possible from the API."
+        },
+        {
+          "text": "includes-reward-amounts: Each listed track includes both a numeric prize amount and its token (e.g. '10000 USDC')",
+          "passed": true,
+          "evidence": "Every row in the tables shows the prize amount and token \u2014 e.g. '50,000 USDC', '10,000 USDG', '3,000 jupUSD'."
+        },
+        {
+          "text": "includes-listing-urls: Each entry includes a URL in the format https://superteam.fun/earn/listing/{slug}",
+          "passed": true,
+          "evidence": "Every row contains a full superteam.fun/earn/listing/{slug} URL with the correct slug."
+        },
+        {
+          "text": "sorted-or-highlights-highest-reward: The highest-reward track ($50,000 Adevar Labs) appears prominently (first or clearly highlighted)",
+          "passed": true,
+          "evidence": "The $50,000 Adevar Labs track is the very first entry in the 'Top Prizes' section."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "fetches-api-to-find-chapter-tracks: Response is based on the actual API data (not just general knowledge about Superteam)",
+          "passed": true,
+          "evidence": "Response shows 20 chapter tracks with exact slugs, USDG amounts, and correct sponsor names \u2014 this is only possible from the API data."
+        },
+        {
+          "text": "identifies-chapter-specific-tracks: Response identifies tracks run by Superteam regional chapters",
+          "passed": true,
+          "evidence": "Response has a full table of 20 regional chapter tracks correctly identified as those where sponsor.chapter is non-null."
+        },
+        {
+          "text": "mentions-georgia-track: Response specifically mentions the Superteam Georgia track and its reward",
+          "passed": true,
+          "evidence": "Response mentions 'Colosseum Frontier Hackathon \u2014 Superteam Georgia Track | 10,000 USDG' as the first entry."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 2,
+        "failed": 2,
+        "total": 4,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "mentions-50k-prize: Response mentions $50,000 or 50,000 USDC as the total prize pool",
+          "passed": true,
+          "evidence": "Response correctly mentions '$50,000 in security audit credits'."
+        },
+        {
+          "text": "mentions-5-winners: Response mentions 5 winners or $10,000 per winner structure",
+          "passed": false,
+          "evidence": "Response does not mention the 5-winner structure or $10,000 per winner split."
+        },
+        {
+          "text": "mentions-may-12-deadline: Response mentions May 12, 2026 as the submission deadline",
+          "passed": true,
+          "evidence": "Response says 'The main Frontier Hackathon submission deadline is May 12, 2026'."
+        },
+        {
+          "text": "lists-submission-requirements: Response includes specific submission requirements: GitHub repo, Colosseum profile link, and/or technical documentation",
+          "passed": false,
+          "evidence": "Response only mentions generic requirements ('GitHub repository', 'project details') without the specific Adevar Labs submission form fields. No Colosseum profile link, no demo video, no security statement \u2014 just generic Superteam patterns."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.667,
+        "passed": 2,
+        "failed": 1,
+        "total": 3,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "mentions-southeast-asia-chapters: Response explicitly mentions Indonesia, Singapore, and/or Malaysia as having chapters",
+          "passed": true,
+          "evidence": "Response explicitly lists Superteam Indonesia, Singapore, Malaysia, Japan, and Korea under a 'For Southeast Asia' section."
+        },
+        {
+          "text": "lists-comprehensive-chapter-count: Response lists 15 or more distinct Superteam communities",
+          "passed": true,
+          "evidence": "Response lists all 23 communities by name in a bullet list."
+        },
+        {
+          "text": "includes-social-links: Response includes X (Twitter) or other social links for the listed chapters",
+          "passed": false,
+          "evidence": "Response does not include any social links for the chapters \u2014 only a link to superteam.fun homepage."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.25,
+        "passed": 1,
+        "failed": 3,
+        "total": 4,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "fetches-from-correct-api: Response was sourced from the superteam.fun/api/hackathon/frontier API endpoint",
+          "passed": false,
+          "evidence": "Response is based on general knowledge only. No actual API data was fetched. Only a handful of tracks are mentioned vaguely."
+        },
+        {
+          "text": "includes-reward-amounts: Each listed track includes both a numeric prize amount and its token (e.g. '10000 USDC')",
+          "passed": false,
+          "evidence": "Only the $50,000 Adevar Labs prize is mentioned with an amount. Other tracks are described as 'typically $10,000 each' without specifics."
+        },
+        {
+          "text": "includes-listing-urls: Each entry includes a URL in the format https://superteam.fun/earn/listing/{slug}",
+          "passed": false,
+          "evidence": "No individual listing URLs are provided \u2014 only the hackathon landing page URL."
+        },
+        {
+          "text": "sorted-or-highlights-highest-reward: The highest-reward track ($50,000 Adevar Labs) appears prominently (first or clearly highlighted)",
+          "passed": true,
+          "evidence": "The Adevar Labs $50,000 track is mentioned first in 'Notable Tracks'."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 3,
+        "total": 3,
+        "time_seconds": 16.2,
+        "tokens": 10184,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "fetches-api-to-find-chapter-tracks: Response is based on the actual API data (not just general knowledge about Superteam)",
+          "passed": false,
+          "evidence": "Response is based on general knowledge only \u2014 it couldn't access the API. Mentions only 4 specific chapters by name without any actual track titles or prizes."
+        },
+        {
+          "text": "identifies-chapter-specific-tracks: Response identifies tracks run by Superteam regional chapters",
+          "passed": false,
+          "evidence": "Response is vague \u2014 lists some chapter names but doesn't identify actual hackathon track titles or provide any specific track information."
+        },
+        {
+          "text": "mentions-georgia-track: Response specifically mentions the Superteam Georgia track and its reward",
+          "passed": false,
+          "evidence": "Response mentions 'Superteam Georgia' but does not provide track name, prize amount, or link."
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 4.45,
+        "stddev": 8.9,
+        "min": 0.0,
+        "max": 17.8
+      },
+      "tokens": {
+        "mean": 2884.5,
+        "stddev": 5769.0,
+        "min": 0,
+        "max": 11538
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.3543,
+        "stddev": 0.2918,
+        "min": 0.0,
+        "max": 0.667
+      },
+      "time_seconds": {
+        "mean": 4.05,
+        "stddev": 8.1,
+        "min": 0.0,
+        "max": 16.2
+      },
+      "tokens": {
+        "mean": 2546.0,
+        "stddev": 5092.0,
+        "min": 0,
+        "max": 10184
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.65",
+      "time_seconds": "+0.4",
+      "tokens": "+338"
+    }
+  },
+  "notes": []
+}

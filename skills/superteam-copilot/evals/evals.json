@@ -1,0 +1,93 @@
+{
+  "skill_name": "superteam-copilot",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Show me all the Frontier hackathon tracks on Superteam. I want to see what's available and which ones have the biggest prizes.",
+      "expected_output": "A list of all tracks from the Frontier hackathon API, sorted by reward amount descending, with title, prize (amount + token), sponsor name, and a clickable URL for each.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "fetches-from-correct-api",
+          "description": "Response was sourced from the superteam.fun/api/hackathon/frontier API endpoint"
+        },
+        {
+          "name": "includes-reward-amounts",
+          "description": "Each listed track includes both a numeric prize amount and its token (e.g. '10000 USDC')"
+        },
+        {
+          "name": "includes-listing-urls",
+          "description": "Each entry includes a URL in the format https://superteam.fun/earn/listing/{slug}"
+        },
+        {
+          "name": "sorted-or-highlights-highest-reward",
+          "description": "The highest-reward track ($50,000 Adevar Labs) appears prominently (first or clearly highlighted)"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Give me the full details on the Adevar Labs bounty — what do I need to submit and what's the deadline?",
+      "expected_output": "Full details fetched from the listing page: $50k in security audit credits, 5 winners of $10k each, deadline May 12 2026, submission requirements including GitHub repo and Colosseum profile link.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "mentions-50k-prize",
+          "description": "Response mentions $50,000 or 50,000 USDC as the total prize pool"
+        },
+        {
+          "name": "mentions-5-winners",
+          "description": "Response mentions 5 winners or $10,000 per winner structure"
+        },
+        {
+          "name": "mentions-may-12-deadline",
+          "description": "Response mentions May 12, 2026 as the submission deadline"
+        },
+        {
+          "name": "lists-submission-requirements",
+          "description": "Response includes specific submission requirements: GitHub repo, Colosseum profile link, and/or technical documentation"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Which countries have a Superteam chapter? I'm based in Southeast Asia and want to know if there's something for my region.",
+      "expected_output": "A list of all 23 Superteam country chapters, with Southeast Asian ones (Indonesia, Singapore, Malaysia) highlighted or easy to find.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "mentions-southeast-asia-chapters",
+          "description": "Response explicitly mentions Indonesia, Singapore, and/or Malaysia as having chapters"
+        },
+        {
+          "name": "lists-comprehensive-chapter-count",
+          "description": "Response lists 15 or more distinct Superteam communities (showing comprehensive coverage)"
+        },
+        {
+          "name": "includes-social-links",
+          "description": "Response includes X (Twitter) or other social links for the listed chapters"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Are there any country-specific Superteam tracks in the Frontier hackathon? Like regional chapters running their own bounties?",
+      "expected_output": "Identifies chapter-specific tracks from the API (where sponsor.chapter is non-null), lists them with rewards — e.g. Superteam Georgia (10000 USDG).",
+      "files": [],
+      "assertions": [
+        {
+          "name": "fetches-api-to-find-chapter-tracks",
+          "description": "Response is based on the actual API data (not just general knowledge about Superteam)"
+        },
+        {
+          "name": "identifies-chapter-specific-tracks",
+          "description": "Response identifies tracks run by Superteam regional chapters (e.g. Superteam Georgia, Superteam India, etc.)"
+        },
+        {
+          "name": "mentions-georgia-track",
+          "description": "Response specifically mentions the Superteam Georgia track and its reward"
+        }
+      ]
+    }
+  ]
+}

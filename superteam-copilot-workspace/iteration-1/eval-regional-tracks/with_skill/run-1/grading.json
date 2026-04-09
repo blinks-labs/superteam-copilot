@@ -1,0 +1,28 @@
+{
+  "eval_id": 4,
+  "eval_name": "eval-regional-tracks",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "fetches-api-to-find-chapter-tracks: Response is based on the actual API data (not just general knowledge about Superteam)",
+      "passed": true,
+      "evidence": "Response shows 20 chapter tracks with exact slugs, USDG amounts, and correct sponsor names \u2014 this is only possible from the API data."
+    },
+    {
+      "text": "identifies-chapter-specific-tracks: Response identifies tracks run by Superteam regional chapters",
+      "passed": true,
+      "evidence": "Response has a full table of 20 regional chapter tracks correctly identified as those where sponsor.chapter is non-null."
+    },
+    {
+      "text": "mentions-georgia-track: Response specifically mentions the Superteam Georgia track and its reward",
+      "passed": true,
+      "evidence": "Response mentions 'Colosseum Frontier Hackathon \u2014 Superteam Georgia Track | 10,000 USDG' as the first entry."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

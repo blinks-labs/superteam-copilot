@@ -1,0 +1,28 @@
+{
+  "eval_id": 4,
+  "eval_name": "eval-regional-tracks",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "fetches-api-to-find-chapter-tracks: Response is based on the actual API data (not just general knowledge about Superteam)",
+      "passed": false,
+      "evidence": "Response is based on general knowledge only \u2014 it couldn't access the API. Mentions only 4 specific chapters by name without any actual track titles or prizes."
+    },
+    {
+      "text": "identifies-chapter-specific-tracks: Response identifies tracks run by Superteam regional chapters",
+      "passed": false,
+      "evidence": "Response is vague \u2014 lists some chapter names but doesn't identify actual hackathon track titles or provide any specific track information."
+    },
+    {
+      "text": "mentions-georgia-track: Response specifically mentions the Superteam Georgia track and its reward",
+      "passed": false,
+      "evidence": "Response mentions 'Superteam Georgia' but does not provide track name, prize amount, or link."
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 3,
+    "total": 3,
+    "pass_rate": 0.0
+  }
+}

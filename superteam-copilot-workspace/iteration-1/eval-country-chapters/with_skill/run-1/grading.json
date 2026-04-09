@@ -1,0 +1,28 @@
+{
+  "eval_id": 3,
+  "eval_name": "eval-country-chapters",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "mentions-southeast-asia-chapters: Response explicitly mentions Indonesia, Singapore, and/or Malaysia as having chapters",
+      "passed": true,
+      "evidence": "Response has a dedicated 'Southeast Asia (your region!)' section listing Indonesia, Singapore, Malaysia, Japan, and Korea."
+    },
+    {
+      "text": "lists-comprehensive-chapter-count: Response lists 15 or more distinct Superteam communities",
+      "passed": true,
+      "evidence": "Response lists all 23 communities in two organized tables."
+    },
+    {
+      "text": "includes-social-links: Response includes X (Twitter) or other social links for the listed chapters",
+      "passed": true,
+      "evidence": "Every row in the tables includes a full https://x.com/... link."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

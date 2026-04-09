@@ -1,0 +1,6 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-list-all-tracks",
+  "prompt": "Show me all the Frontier hackathon tracks on Superteam. I want to see what's available and which ones have the biggest prizes.",
+  "assertions": []
+}

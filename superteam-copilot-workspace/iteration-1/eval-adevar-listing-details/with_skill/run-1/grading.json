@@ -1,0 +1,33 @@
+{
+  "eval_id": 2,
+  "eval_name": "eval-adevar-listing-details",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "mentions-50k-prize: Response mentions $50,000 or 50,000 USDC as the total prize pool",
+      "passed": true,
+      "evidence": "Response says 'Total: $50,000 USDC in security audit credits'."
+    },
+    {
+      "text": "mentions-5-winners: Response mentions 5 winners or $10,000 per winner structure",
+      "passed": true,
+      "evidence": "Response says 'Winners: 5 teams x $10,000 each' and shows the breakdown table."
+    },
+    {
+      "text": "mentions-may-12-deadline: Response mentions May 12, 2026 as the submission deadline",
+      "passed": true,
+      "evidence": "Response says 'Application deadline: May 12, 2026'."
+    },
+    {
+      "text": "lists-submission-requirements: Response includes specific submission requirements: GitHub repo, Colosseum profile link, and/or technical documentation",
+      "passed": true,
+      "evidence": "Response lists all 10 submission requirements including 'GitHub repository link', 'Colosseum profile link', 'Loom/demo video', 'technical docs', etc."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

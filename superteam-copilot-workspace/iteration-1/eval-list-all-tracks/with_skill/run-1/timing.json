@@ -1,0 +1,6 @@
+{
+  "total_tokens": 16517,
+  "duration_ms": 84951,
+  "total_duration_seconds": 85.0,
+  "note": "Agent was denied WebFetch — inline eval used instead for grading"
+}
