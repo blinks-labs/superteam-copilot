@@ -5,7 +5,7 @@ AI agent skill for the Solana Frontier Hackathon ecosystem and general Superteam
 ## Install
 
 ```bash
-npx skills add superteam-copilot
+npx skills add blinks-labs/superteam-copilot
 ```
 
 ## What it does
