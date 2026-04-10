@@ -58,7 +58,7 @@ Builders can submit to both the main Colosseum hackathon AND multiple Superteam 
 
 ### Fetching Side Track Listings
 
-Use WebFetch on `https://superteam.fun/api/hackathon/frontier` to get all side tracks as a JSON array (no auth needed). Each item:
+Fetch `https://superteam.fun/api/hackathon/frontier` to get all side tracks as a JSON array (no auth needed). Each item:
 
 ```json
 {
@@ -82,7 +82,7 @@ Key fields:
 
 ### Fetching Full Track Details
 
-For a specific track, use WebFetch on `https://superteam.fun/earn/listing/{slug}`. This includes the full prize breakdown, submission requirements, evaluation criteria, eligibility, and deadlines.
+For a specific track, fetch `https://superteam.fun/earn/listing/{slug}`. This includes the full prize breakdown, submission requirements, evaluation criteria, eligibility, and deadlines.
 
 ---
 
@@ -134,9 +134,35 @@ For a specific track, use WebFetch on `https://superteam.fun/earn/listing/{slug}
 
 ## Superteam Country Chapters
 
-For country-specific Superteam chapter questions, read `references/countries.md` — the data is already captured there (no API call needed).
+There are 23 Superteam communities globally. Use the table below — no API call needed.
 
-There are 23 Superteam communities globally. Notable Southeast Asian chapters: Indonesia, Singapore, Malaysia.
+| Community | Countries Covered | X (Twitter) |
+|-----------|------------------|-------------|
+| Superteam UAE | United Arab Emirates | https://x.com/SuperteamAE |
+| La Familia | Spain | https://x.com/LaFamilia_so |
+| Superteam Poland | Poland | https://x.com/SuperteamPOL |
+| Superteam Brazil | Brazil | https://x.com/superteambr |
+| Superteam Ukraine | Ukraine | https://x.com/SuperteamUKR |
+| Superteam Netherlands | Netherlands | https://x.com/SuperteamNL |
+| Superteam Kazakhstan | Kazakhstan | https://x.com/SuperteamKZ |
+| Superteam Indonesia | Indonesia | https://x.com/SuperteamINDO |
+| Superteam Japan | Japan | https://x.com/SuperteamJapan |
+| Superteam Singapore | Singapore | https://x.com/SuperteamSG |
+| Superteam Balkan | Albania, Bosnia, Bulgaria, Croatia, Kosovo, Montenegro, North Macedonia, Romania, Serbia, Slovenia, Greece | https://x.com/SuperteamBLKN |
+| Superteam Korea | South Korea | https://x.com/superteamkorea |
+| Superteam Germany | Germany | https://x.com/SuperteamDE |
+| Superteam USA | United States | https://x.com/SuperteamUSA |
+| Superteam Ireland | Ireland | https://x.com/superteamie |
+| Superteam Georgia | Georgia | https://x.com/SuperteamGEO |
+| Superteam UK | United Kingdom | https://x.com/superteamuk |
+| Superteam Malaysia | Malaysia | https://x.com/SuperteamMY |
+| Superteam Turkey | Turkey | https://x.com/superteamtr |
+| Superteam Canada | Canada | https://x.com/SuperteamCAN |
+| Superteam India | India | https://x.com/SuperteamIN |
+| Superteam Australia | Australia | https://x.com/SuperteamAU |
+| Superteam Nigeria | Nigeria | https://x.com/superteamng |
+
+Notable Southeast Asian chapters: Indonesia, Singapore, Malaysia. Superteam Balkan covers 11 countries. La Familia is the Spanish-speaking community.
 
 ---
 
@@ -164,7 +190,7 @@ There are 23 Superteam communities globally. Notable Southeast Asian chapters: I
 → Explain Colosseum Copilot — what it does, link to docs, mention conversational vs. deep-dive modes.
 
 **"Which countries have a Superteam chapter?"**
-→ Read `references/countries.md`, list them with social links.
+→ Use the country chapters table in this skill, list them with social links.
 
 **"Tell me about the Adevar Labs bounty"**
 → Fetch `https://superteam.fun/earn/listing/50k-adevarlabs-bounty`, summarize prize, requirements, deadline.
@@ -172,6 +198,3 @@ There are 23 Superteam communities globally. Notable Southeast Asian chapters: I
 **"Find side tracks worth more than $10,000"**
 → Fetch the API, filter by `rewardAmount > 10000`.
 
-## References
-
-- `references/countries.md` — All 23 Superteam country chapters with social links
