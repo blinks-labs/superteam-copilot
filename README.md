@@ -1,6 +1,6 @@
 # Superteam Copilot
 
-AI agent skill for the Solana Frontier Hackathon ecosystem. Helps builders navigate the main Colosseum hackathon, Superteam Earn side tracks, Colosseum Copilot research tool, and Superteam country chapters — all from your coding assistant.
+AI agent skill for the Solana Frontier Hackathon ecosystem and general Superteam Earn opportunities. Helps builders navigate the main Colosseum hackathon, Frontier side tracks, broader Superteam Earn bounties/projects, Colosseum Copilot research, and Superteam country chapters.
 
 ## Install
 
@@ -11,7 +11,8 @@ npx skills add superteam-copilot
 ## What it does
 
 - **Main Frontier Hackathon** — prizes ($200k pool), timeline, how to register, accelerator opportunity
-- **Superteam side tracks** — browse and filter all ecosystem/chapter tracks on Superteam Earn, sorted by prize
+- **Superteam Earn opportunities** — browse general bounties and projects across tabs/categories like Content, Design, and Development
+- **Frontier side tracks** — browse and filter ecosystem/chapter tracks tied specifically to the Frontier hackathon
 - **Track details** — full submission requirements, evaluation criteria, deadlines, and eligibility for any specific track
 - **Colosseum Copilot** — explains the research tool for validating hackathon ideas (5,400+ submissions, 84k+ archive docs, competitor analysis)
 - **Country chapters** — all 23 Superteam regional communities with social links
@@ -27,7 +28,24 @@ npx skills add superteam-copilot
 | **Deadline** | May 11, 2026 |
 | **Side tracks** | [superteam.fun/earn/hackathon/frontier](https://superteam.fun/earn/hackathon/frontier) |
 
-## Side tracks
+## Superteam Earn opportunities
+
+Superteam Earn also hosts **general opportunities and bounties** that are not tied to the Frontier hackathon. Use the listings API to browse them by tab and category:
+
+`https://superteam.fun/api/listings?context=home&tab=all&category=Content`
+
+Supported filters:
+
+- **tab** — `All`, `Bounties`, `Projects`, `Frontier`
+- **category** — `All`, `Content`, `Design`, `Development`, `Other`
+
+This is useful for prompts like:
+
+- "Show me all Superteam content bounties"
+- "Find development projects on Superteam Earn"
+- "What non-Frontier opportunities are available right now?"
+
+## Frontier side tracks
 
 Superteam Earn hosts **ecosystem submission tracks** that run alongside the main Colosseum hackathon. There are two types:
 
@@ -83,6 +101,7 @@ skills/superteam-copilot/
 |----------|-----|
 | Frontier Hackathon | https://colosseum.com/frontier |
 | Register | https://arena.colosseum.org/hackathon |
+| Superteam Earn listings API | https://superteam.fun/api/listings?context=home&tab=all&category=Content |
 | Superteam side tracks | https://superteam.fun/earn/hackathon/frontier |
 | Colosseum Copilot docs | https://docs.colosseum.com/copilot/introduction |
 | Superteam | https://superteam.fun |

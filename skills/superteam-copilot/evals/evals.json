@@ -88,6 +88,42 @@
           "description": "Response specifically mentions the Superteam Georgia track and its reward"
         }
       ]
+    },
+    {
+      "id": 5,
+      "prompt": "Show me Superteam content bounties. I'm not asking about Frontier, just the general Earn opportunities.",
+      "expected_output": "Uses the general Superteam listings API with tab=Bounties and category=Content, and clearly treats these as general Earn listings rather than Frontier hackathon side tracks.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "uses-general-listings-api",
+          "description": "Response is sourced from the superteam.fun/api/listings endpoint rather than the hackathon/frontier API"
+        },
+        {
+          "name": "uses-correct-filters",
+          "description": "Response uses tab=Bounties and category=Content when describing or fetching the data"
+        },
+        {
+          "name": "distinguishes-from-frontier",
+          "description": "Response explicitly clarifies that these are general Superteam Earn opportunities, not Frontier hackathon tracks"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Find me development projects on Superteam Earn, and include Frontier only if it's in that tab.",
+      "expected_output": "Uses the general Superteam listings API with tab=Projects and category=Development, and explains that Frontier can also be queried separately via tab=Frontier or the dedicated hackathon endpoint.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "uses-projects-development-filters",
+          "description": "Response uses tab=Projects and category=Development when describing or fetching the data"
+        },
+        {
+          "name": "clarifies-frontier-surface",
+          "description": "Response distinguishes general project listings from Frontier-specific listings"
+        }
+      ]
     }
   ]
 }
